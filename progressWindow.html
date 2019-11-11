@@ -1,0 +1,108 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Electron Timer App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="libraries/jquery/jquery.min.js"></script>
+    <link rel="stylesheet" href="libraries/materialize/materialize.min.css">
+    <link rel="stylesheet" href="assets/styles.css">
+    <script src="libraries/vue/vue.min.js"></script>
+</head>
+
+<body style="-webkit-app-region: drag;overflow: hidden!important;">
+    <div class="container-fluid">
+        <div class="card-content">
+            <div id="progressApp">
+                <div class="progress showBar" id="progressBarStatus">
+                </div>
+                <div class="determinate" id="progressBar" style="width:0%"></div>
+            </div>
+            <!--<div id="progressContainer" style="padding-bottom: 2px;">
+                <div class="progress" id="bottomProgress">
+                    
+                </div>
+            </div>-->
+            <div class="white-text" id="totalTime"></div>
+        </div>
+    </div>
+
+    <style type="text/css">
+        #totalTime {
+            border-radius: 5px;
+            padding: 5px;
+            padding-bottom: 3px;
+            position: relative;
+            bottom: 27px;
+            margin: 0 auto;
+            width: 125px;
+            z-index: -1;
+            background-color: #833177 !important;
+            /* background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0, rgb(43, 194, 83)), color-stop(1, rgb(84, 240, 84))) !important; */
+        }
+
+        .progress {
+            height: 23px !important;
+            font-size: 13px;
+        }
+
+        #bottomProgress {
+            height: 9px !important;
+            top: -16px;
+            border-radius: 0px 0px 2px 2px;
+        }
+
+        .determinate {
+            background-color: #833177 !important;
+            /* background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0, rgb(43, 194, 83)), color-stop(1, rgb(84, 240, 84))) !important; */
+            z-index: 1;
+            opacity: 0.9;
+            height: 24px;
+            position: relative;
+            top: -1.6em;
+        }
+
+        .progress {
+            margin: 0;
+        }
+
+        .progress-bar {
+            float: left;
+            z-index: 0;
+            width: 0;
+            height: 100%;
+            font-size: 12px;
+            line-height: 20px;
+            color: #fff;
+            text-align: center;
+            background-color: #9e9e9e !important;
+            -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
+            box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
+            -webkit-transition: width .6s ease;
+            -o-transition: width .6s ease;
+            transition: width .6s ease;
+        }
+
+        .progress-bar span {
+            z-index: 2;
+            position: relative;
+        }
+
+        .sep {
+            z-index: 3;
+            position: absolute;
+            height: 100%;
+            width: 2px;
+            background-color: #e0e0e0;
+        }
+    </style>
+
+    <script src="libraries/moment/moment.min.js"></script>
+    <script src="libraries/materialize/materialize.min.js"></script>
+    <script src="libraries/easy-timer/easytimer.min.js"></script>
+    <script src="libraries/progressbar/progressbar.min.js"></script>
+    <script src="progressWindow.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "electron_timer_application",
+  "version": "0.0.1",
+  "description": "Used to arrange the presentation in slots such that all the presenter get allocated time to present",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-packager . app --platform win32 --arch x64 --overwrite --out dist/",
+    "setup": "electron-installer-windows --src dist/app-win32-x64/ --dest  dist/installers/"
+  },
+  "author": "Robin",
+  "license": "MIT",
+  "dependencies": {
+    "easytimer.js": "^2.2.2",
+    "electron-positioner": "^3.0.0",
+    "randomcolor": "^0.5.3"
+  },
+  "devDependencies": {
+    "electron": "^2.0.18",
+    "electron-installer-windows": "*",
+    "electron-packager": "*"
+  }
+}

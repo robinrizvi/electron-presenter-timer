@@ -1,0 +1,108 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Electron Timer App</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="libraries/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="libraries/materialize/materialize.min.css">
+    <link rel="stylesheet" href="assets/styles.css">
+    <script src="libraries/vue/vue.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="panel panel-primary" style="border-radius: 0px!important">
+                <div class="panel-heading">
+                    <h4 class="panel-title" style="float: right;margin-top: 6px;">Timer Configuration</h4>
+                    <span class="headerButtons">
+                        <img src="assets/images/profile.png" width="30px">
+                    </span>
+                </div>
+                <div class="panel-body">
+                    <div id="config">
+                        <div class="row">
+                            <div class="col s4">
+                                <input type="number" name="timerLimit" id="timerLimit" v-model="timerLimit" class="validate">
+                                <span class="helper-text">Total Time</span>
+                            </div>
+                            <div class="col s4" style="float: right;">
+                                <input type="checkbox" name="playNotification" id="playNotification" class="filled-in" v-model="playNotification" v-on:click="toggleNotification()">
+                                <span class="helper-text" data-error="Invalid" data-success="Ok" v-on:click="toggleNotification">Play Notification</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s4">
+                                <input class="jscolor color-picker" value="ab2567" id="warningColor1" v-model="warningColor1">
+                                <span class="helper-text">Timer warning 1 color</span>
+                            </div>
+                            <div class="col s4">
+                                <input type="number" name="warningTime1" id="warningTime1" class="filled-in color-picker" v-model="warningTime1">
+                                <span class="helper-text">Timer warning 1 time %</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s4">
+                                <input class="jscolor color-picker" value="ab2567" id="warningColor2" v-model="warningColor2">
+                                <span class="helper-text">Timer warning 2 color</span>
+                            </div>
+                            <div class="col s4">
+                                <input type="number" name="warningTime2" id="warningTime2" class="filled-in color-picker" v-model="warningTime2">
+                                <span class="helper-text">Timer warning 2 time %</span>
+                            </div>
+                        </div>
+                    </div>
+                    </form>
+
+                    <div id="app-4">
+                        <ul>
+                            <li v-for="(slot, index) in slots">
+                                <div class="row">
+                                    <div class="col s4">
+                                        <input type="text" name="slotHeading" id="slotHeading" v-model="slot.slotHeading">
+                                        <span class="helper-text" data-error="Invalid" data-success="Ok">Slot Title</span>
+                                    </div>
+                                    <div class="col s2">
+                                        <input type="number" name="slotTime" id="slotTime" v-model="slot.slotTime">
+                                        <span class="helper-text" data-error="Invalid" data-success="Ok">Slot Time</span>
+                                    </div>
+                                    <div class="col s4">
+                                        <input type="text" name="presenterName" id="presenterName" v-model="slot.presenter">
+                                        <span class="helper-text" data-error="Invalid" data-success="Ok">Presenter</span>
+                                    </div>
+                                    <div class="col s1">
+                                        <a class="btn-floating btn-small waves-effect waves-light green" title="Add Slot" v-on:click="addSlot">
+                                            <i class="material-icons">add</i>
+                                        </a>
+                                    </div>
+                                    <div class="col s1">
+                                        <a class="btn-floating btn-small waves-effect waves-light red" title="Remove Slot" v-on:click="slots.length>1 ? slots.splice(index, 1):null">
+                                            <i class="material-icons">remove</i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="row">
+                            <div class="col s1">
+                                <a class="waves-effect waves-light btn-small green" v-on:click="process">Launch
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="libraries/materialize/materialize.min.js"></script>
+    <script src="libraries/easy-timer/easytimer.min.js"></script>
+    <script src="libraries/progressbar/progressbar.min.js"></script>
+    <script src="libraries/jscolor/jscolor.js"></script>
+    <script>require('./configWindowRenderer.js')</script>
+    <script src="configWindow.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+#progressContainer {
+  height: 2px;
+}
+
+.color-picker {
+  height: 30px !important;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.badge-notify{
+  background:green;
+  position:relative;
+  top: -20px;
+  left: -35px;
+ }
+
+ .card .card-content {
+  padding: 2px 10px 2px 10px;
+}
+
+.card .card-content .card-title {
+  display: block;
+  line-height: 25px;
+  margin-bottom: 0px;
+}
+
+.card .card-title {
+  font-size: 18px;
+  font-weight: 300;
+}
+.card .card-action {
+  padding: 5px 18px;
+}
+
+.green .darken-1 {
+  background-color: #FFF;
+}
