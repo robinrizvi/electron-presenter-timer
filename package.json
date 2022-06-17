@@ -16,7 +16,7 @@
     "randomcolor": "^0.5.3"
   },
   "devDependencies": {
-    "electron": "^2.0.18",
+    "electron": "^15.5.5",
     "electron-installer-windows": "*",
     "electron-packager": "*"
   }
